@@ -1,0 +1,25 @@
+/********************   main   ********************/
+int main(int argc, char*argv[]) {
+	...
+	
+	printf ("nom du fichier ?\n");
+	scanf( "%s", nomfic);
+	
+	/****** lire le fichier et le ranger dans le tableau  *******/
+	ilig = lire_fichier(tab_eleves, nomfic);
+	
+	/****** visualisation du tableau a l ecran  *******/
+	/* A COMPLETER */
+	
+	return 1;
+}
+
+/********************   lire_fichier   ******************
+ * lire le fichier ligne par ligne et le ranger dans le 
+ * tableau dont chaque entree est du type Eleve_t 
+ ********************************************************/
+int lire_fichier(Eleve_t *table, char * nomfic){
+	
+	/* A COMPLETER */
+
+	return ilig;		

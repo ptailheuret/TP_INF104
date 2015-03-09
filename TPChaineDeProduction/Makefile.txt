@@ -1,0 +1,34 @@
+###########################################
+# variables a initialiser
+###########################################
+
+CC       = 
+CFLAGS   = 
+
+
+LDFLAGS  =  
+LD       = 
+
+#liste des fichiers objets
+OFILES   = 
+
+
+###########################################
+
+
+all: clean appli
+
+clean:
+	rm -f *.o appli
+
+#production de l'objet main.o (a completer)
+main.o:
+	$(CC) $(CFLAGS) 
+
+# production de l'objet foncs.o (a completer)
+foncs.o:
+	$(CC) $(CFLAGS) 
+
+# production de l'executable appli (a completer)
+appli: $(OFILES)
+	$(LD) $(LDFLAGS) 

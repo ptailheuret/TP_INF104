@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <strings.h>
+#include <stdlib.h>
+
+
+#include "tpselc-types.h"
+#include "gere-liste.h"
+
+/***************************************************
+RAPPEL :
+typedef struct Eleve {
+	char Nom[20];
+	char Prenom[20];
+	char login[20];
+	char photo[20];
+	int x, y, z;
+} Eleve_t;
+*****************   globales   ********************/
+
+Maillon_t * debut = NULL;
+
+/********************   main   ********************/
+int main(int argc, char*argv[]) {
+	
+	/* REPRENDRE CONTENU DU TP PRECEDENT */
+	
+    // on cree une liste chainee a partir du tableau
+             for (i = 0; i <=dimtab; i++){
+                        debut = chainer(debut, nouveau_maillon( tab_eleves[i]) );
+    
+         ecrire_liste(debut);
+	
+	ecrire_fic_liste(debut, argv[1]);
+	
+	
+	return 0;
+}
+/********************   lire_fichier   ********************
+* lire le fichier ligne par ligne et le ranger dans le tableau dont
+* chaque entree est du type Eleve_ti.
+* Renvoie le nombre de lignes lues.
+**************************************************************/
+
+int lire_fichier(Eleve_t *table, char * nomfic){
+	FILE *fichier;
+    int ret_lec,ilig =0;
+	
+	/* REPRENDRE CONTENU DU TP PRECEDENT */
+	
+	return ilig;		
+}

@@ -1,0 +1,32 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+
+int main(int argc, char *argv[])
+{
+  int i = 0;
+  int *ptr;
+  int *alloc(int val);
+
+  
+  ptr=alloc(7);
+
+  for (i=0;i<19;i++)
+    {
+      printf("%d",ptr[i]);
+    }
+
+  return 0;
+}
+
+int *alloc(int val)
+{
+  int i;   
+  int tab[20];
+  int *pTab;
+  pTab = tab;
+  for (i=0;i<19;i++)
+    pTab[i]=val;
+   
+  return pTab;
+}

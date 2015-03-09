@@ -1,0 +1,6 @@
+/************ Signatures *************/
+
+Maillon_t * nouveau_maillon(Eleve_t Un_eleve);
+Maillon_t * chainer(Maillon_t *debut, Maillon_t * maillon_a_chainer);
+void ecrire_liste(Maillon_t *debut);
+int ecrire_fic_liste (Maillon_t * debut,  char * nom_fichier);

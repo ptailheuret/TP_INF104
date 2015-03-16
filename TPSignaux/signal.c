@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
   for(Nb_Sig = 1; Nb_Sig < NSIG ; Nb_Sig ++)
     {
-      Traite_Sig(Nb_Sig);
+      signal(Nb_Sig, Traite_Sig);
     }
 
   while(1)

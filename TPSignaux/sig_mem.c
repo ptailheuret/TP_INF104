@@ -21,19 +21,24 @@ int main(int argc, char *argv[]) {
 	long Retour, Ret_scan;
 	void Traite_Sig(int Numero);
 	
-	for (Tab_Index=0 ; Tab_Index<100; Tab_Index++) Tab[Tab_Index]= Tab_Index;
+	for (Tab_Index=0 ; Tab_Index<100; Tab_Index++)
+	  Tab[Tab_Index]= Tab_Index;
 	
 	/* reperer les adresses */
 	printf ("Tab = (hexa)%p, adresse Tab[0] = %p, adresse Tab[99] = %p\n",Tab , &Tab[0], &Tab[99]);
 	
 	/*  Associer la fonction de traitement aux signaux */
-	Retour = (long)signal(...);
+
+	//SIGBUS
+	Retour = (long)signal(7 ,Traite_Sig);
 	printf ("retour de signal (hexa): %lx\n", Retour);
-	Retour =(long)signal(...);
+
+	//SIGSEGV
+	Retour =(long)signal(11 ,Traite_Sig);
 	printf ("retour de signal (hexa): %lx\n", Retour);
 	
 	/* point de reprise */
-	Retour  = ...;
+	Retour  = sigsetjmp(contexte,1);
 	printf ("retour de setjmp : %ld\n", Retour);
 	
 	/* essayer des valeurs de i pour obtenir une erreur */
@@ -55,8 +60,7 @@ void  Traite_Sig (int Num_Sig ){
 	printf("-- Traite_Sig -- Pid %d recoit signal %d\n", (int)getpid(), Num_Sig);
 	printf("-- Traite_Sig -- Erreur sur adresse : %p, Tab_Index = %ld (hexa : %lx)\n", &Tab[Tab_Index], Tab_Index, Tab_Index);
 	
-	Retour = ... ;
+	Retour = siglongjmp(contexte, Tab_Index);
 	printf ("-- Traite_Sig -- Retour de signal (hexa): %lx\n", Retour);
-	... ;
 }
 
